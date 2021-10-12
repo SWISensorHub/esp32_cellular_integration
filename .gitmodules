@@ -1,3 +1,6 @@
 [submodule "esp-idf"]
 	path = esp-idf
 	url = https://github.com/espressif/esp-idf.git
+[submodule "components/esp-aws-iot"]
+	path = components/esp-aws-iot
+	url = https://github.com/espressif/esp-aws-iot
