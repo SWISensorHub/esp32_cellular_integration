@@ -1,0 +1,25 @@
+set(CELL_INTF_DIR "${CMAKE_CURRENT_LIST_DIR}/FreeRTOS-Cellular-Interface")
+set(CELL_SRC_DIR "${CELL_INTF_DIR}/source")
+
+if(CONFIG_CELLULAR_MODULE_HL7802)
+  set(CELL_MODULE_DIR "${CELL_INTF_DIR}/modules/hl7802")
+elseif(CONFIG_CELLULAR_MODULE_BG96)
+  set(CELL_MODULE_DIR "${CELL_INTF_DIR}/modules/bg96")
+elseif(CONFIG_CELLULAR_MODULE_SARA_R4)
+  set(CELL_MODULE_DIR "${CELL_INTF_DIR}/modules/sara_r4")
+else()
+  message(FATAL_ERROR "No cellular module selected")
+endif()
+
+
+idf_component_register(
+  SRC_DIRS
+  "${CELL_SRC_DIR}"
+  "${CELL_MODULE_DIR}"
+  INCLUDE_DIRS
+  "${CELL_SRC_DIR}/include"
+  "${CELL_SRC_DIR}/include/common"
+  PRIV_INCLUDE_DIRS
+  "${CELL_SRC_DIR}/interface"
+  "${CELL_SRC_DIR}/include/private"
+  "${CELL_MODULE_DIR}")

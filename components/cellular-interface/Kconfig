@@ -1,0 +1,16 @@
+menu "Cellular Interface"
+
+    choice CELLULAR_MODULE
+        prompt "Cellular implementation"
+
+        config CELLULAR_MODULE_HL7802
+            bool "Sierra Wireless HL7802"
+
+        config CELLULAR_MODULE_BG96
+            bool "Quectel BG96"
+
+        config CELLULAR_MODULE_SARA_R4
+            bool "u-blox SARA-R4"
+    endchoice
+
+endmenu
