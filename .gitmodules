@@ -6,4 +6,4 @@
 	url = https://github.com/espressif/esp-aws-iot
 [submodule "components/cellular-interface/FreeRTOS-Cellular-Interface"]
 	path = components/cellular-interface/FreeRTOS-Cellular-Interface
-	url = https://github.com/FreeRTOS/FreeRTOS-Cellular-Interface.git
+	url = https://github.com/SWISensorHub/FreeRTOS-Cellular-Interface

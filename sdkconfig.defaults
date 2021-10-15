@@ -1,0 +1,2 @@
+# Choose the Sierra Wireless HL7802 as the cellular_interface modem implementation
+CONFIG_CELLULAR_MODULE_HL7802=y

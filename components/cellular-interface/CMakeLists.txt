@@ -8,15 +8,18 @@ elseif(CONFIG_CELLULAR_MODULE_BG96)
 elseif(CONFIG_CELLULAR_MODULE_SARA_R4)
   set(CELL_MODULE_DIR "${CELL_INTF_DIR}/modules/sara_r4")
 else()
-  message(FATAL_ERROR "No cellular module selected")
+  #message(FATAL_ERROR "No cellular module selected. ${CELL_INTF_DIR}(${CONFIG_CELLULAR_MODULE_HL7802},${CONFIG_CELLULAR_MODULE_BG96},${CONFIG_CELLULAR_MODULE_SARA_R4})")
+  message(WARNING "No cellular module selected. ${CELL_INTF_DIR}(${CONFIG_CELLULAR_MODULE_HL7802},${CONFIG_CELLULAR_MODULE_BG96},${CONFIG_CELLULAR_MODULE_SARA_R4})")
 endif()
 
 
 idf_component_register(
   SRC_DIRS
+  "${CMAKE_CURRENT_LIST_DIR}/source"
   "${CELL_SRC_DIR}"
   "${CELL_MODULE_DIR}"
   INCLUDE_DIRS
+  "${CMAKE_CURRENT_LIST_DIR}/include"
   "${CELL_SRC_DIR}/include"
   "${CELL_SRC_DIR}/include/common"
   PRIV_INCLUDE_DIRS
