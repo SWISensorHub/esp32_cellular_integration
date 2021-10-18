@@ -31,7 +31,7 @@ void Platform_EnterCritical(void)
 
 void Platform_ExitCritical(void)
 {
-    taskENTER_CRITICAL(&cellular_socket_context_mutex);
+    taskEXIT_CRITICAL(&cellular_socket_context_mutex);
 }
 
 static void thread_runner(void *thread_request)
